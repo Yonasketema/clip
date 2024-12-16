@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum STATUS {
+  ERROR
+  WORKING
+  END
+}
+
+model AgentWork {
+  id       String   @id @default(uuid())
+  updateAt DateTime @updatedAt
+  createAt DateTime @default(now())
+
+  events_message String[]      @db.Text
+  status         STATUS
+  output         String
+  CreatedVideo   CreatedVideo?
+}
+
+model CreatedVideo {
+  id       String   @id @default(uuid())
+  updateAt DateTime @updatedAt
+  createAt DateTime @default(now())
+
+  agentWorkId String    @unique
+  agentWork   AgentWork @relation(fields: [agentWorkId], references: [id])
+
+  productName    String?
+  page           String?
+  status         Boolean? @default(false)
+  description    String?
+  productWebsite String?
+  videoUrl       String?
+}

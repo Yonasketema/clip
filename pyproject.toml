@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "tiktok"
+version = "0.1.0"
+description = ""
+authors = ["yonasketema <yonask.kitaw@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<3.12"
+crewai = {extras = ["tools"], version = "^0.30.11"}
+python-dotenv = "^1.0.1"
+duckduckgo-search = "^6.1.0"
+openai = "^1.30.1"
+opencv-python = "^4.9.0.80"
+pillow = "^10.3.0"
+moviepy = "^1.0.3"
+numpy = "^1.26.4"
+nltk = "^3.8.1"
+pydantic = "^2.7.1"
+faster-whisper = "0.7.0"
+captacity = {extras = ["local-whisper"], version = "^0.3.1"}
+apscheduler = "^3.10.4"
+pexels-api-py = "^0.0.5"
+ffmpeg = "^1.4"
+elevenlabs = "^1.5.0"
+selenium-firefox = "^2.0.8"
+requests-auth-aws-sigv4 = "^0.7"
+tiktok-uploader = "^1.0.16"
+playwright = "^1.45.1"
+loguru = "^0.7.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
